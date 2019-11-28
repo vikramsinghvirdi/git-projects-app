@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "vmware-github-projects"
+    "name": "git-projects-app"
   },
   "apps": [
     {

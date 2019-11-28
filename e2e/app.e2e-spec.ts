@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('vmware-github-projects App', () => {
+describe('git-projects-app App', () => {
   let page: AppPage;
 
   beforeEach(() => {

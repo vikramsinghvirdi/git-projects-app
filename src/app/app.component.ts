@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConnectionService } from 'ng-connection-service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'git-projects-app';
+  isConnected = true;
+  constructor(private connectionService: ConnectionService) {
+    this.connectionService.monitor().subscribe(isConnected => {
+      this.isConnected = isConnected;
+    });
+  }
 }

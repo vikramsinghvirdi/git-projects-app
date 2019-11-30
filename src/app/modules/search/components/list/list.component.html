@@ -1,0 +1,133 @@
+<!-- <div class="list-content">
+    <aside class="list-content__filters">
+        <app-filter></app-filter>
+    </aside>
+    <section class="list-content__results">
+
+    </section>
+</div> -->
+<!-- 
+<nav class="sidenav">
+    <section class="sidenav-content">
+        <a href="..." class="nav-link active">
+            Nav Element 1
+        </a>
+        <a href="..." class="nav-link">
+            Nav Element 2
+        </a>
+        <section class="nav-group collapsible">
+            <input id="tabexample1" type="checkbox">
+            <label for="tabexample1">Collapsible Nav Element</label>
+            <ul class="nav-list">
+                <li><a class="nav-link">Link 1</a></li>
+                <li><a class="nav-link">Link 2</a></li>
+            </ul>
+        </section>
+        <section class="nav-group">
+            <input id="tabexample2" type="checkbox">
+            <label for="tabexample2">Default Nav Element</label>
+            <ul class="nav-list">
+                <li><a class="nav-link">Link 1</a></li>
+                <li><a class="nav-link">Link 2</a></li>
+                <li><a class="nav-link active">Link 3</a></li>
+                <li><a class="nav-link">Link 4</a></li>
+                <li><a class="nav-link">Link 5</a></li>
+                <li><a class="nav-link">Link 6</a></li>
+            </ul>
+        </section>
+    </section>
+</nav> -->
+<!-- <div class="content-area">
+    <section class="content-area__header">
+        <div class="heading">
+            <h3>GitHub Projects List</h3>
+        </div>
+        <div class="options">
+            <clr-dropdown>
+                <button class="dropdown-toggle btn btn-link" clrDropdownTrigger>
+                    Sort By
+                    <clr-icon shape="caret down"></clr-icon>
+                </button>
+                <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+                    <div aria-label="Name" clrDropdownItem>Name</div>
+                    <div aria-label="Name" clrDropdownItem>Language</div>
+                    <div aria-label="Name" clrDropdownItem>Fork</div>
+                    <div aria-label="Name" clrDropdownItem>Updated At</div>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </section>
+    <section class="content-area__datagrid">
+        <clr-datagrid>
+            <clr-dg-column [clrDgField]="'repo.name'" [clrDgSortBy]="repoNameComparator">Name</clr-dg-column>
+            <clr-dg-column>Description</clr-dg-column>
+            <clr-dg-column>Language</clr-dg-column>
+            <clr-dg-column>Fork</clr-dg-column>
+            <clr-dg-column>Creation At</clr-dg-column>
+            <clr-dg-column>Updated At</clr-dg-column>
+
+            <clr-dg-row *ngFor="let repo of repos">
+                <clr-dg-cell>{{repo.name}}</clr-dg-cell>
+                <clr-dg-cell>{{repo.description}}</clr-dg-cell>
+                <clr-dg-cell>{{repo.language}}</clr-dg-cell>
+                <clr-dg-cell>{{repo.fork}}</clr-dg-cell>
+                <clr-dg-cell>{{repo.created_at | date}}</clr-dg-cell>
+                <clr-dg-cell>{{repo.updated_at | date}}</clr-dg-cell>
+            </clr-dg-row>
+
+            <clr-dg-footer>
+                <clr-dg-pagination #pagination clrDgPageSize="page.per_page" next previous>
+                    <clr-dg-page-size [clrPageSizeOptions]="[20,50,100]" (change)="handlePageChange($event)">Repos per
+                        page
+                    </clr-dg-page-size>
+                    {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+                    of {{repos.length}} repos
+                </clr-dg-pagination>
+            </clr-dg-footer>
+        </clr-datagrid>
+    </section>
+</div> -->
+<div class="list-container">
+    <div class="list-header">
+        <h3>GitHub Projects</h3>
+        <p class="p1">List of all Open Source projects</p>
+    </div>
+    <div class="list-content">
+        <aside class="list-content__filters">
+            <app-filter></app-filter>
+        </aside>
+        <section class="list-content__results">
+            <div class="summary">
+                <h4>Showing {{repos.length}} of {{page.total}} Repos</h4>
+                <!-- <div class="btn-group">
+                        <div class="radio btn btn-icon">
+                            <input type="radio" name="btn-group-view-type" id="btn-card" value="card" checked (click)="changeView($event)">
+                            <clr-icon shape="home" for="btn-card"></clr-icon>
+                        </div>
+                        <div class="radio btn btn-icon">
+                            <input type="radio" name="btn-group-view-type" id="btn-list" value="list" (click)="changeView($event)">
+                            <label for="btn-list">List</label>
+                        </div>
+                    </div> -->
+                <div class="btn-group btn-primary btn-icon">
+                    <button class="btn">
+                        <clr-icon shape="home"></clr-icon>
+                        <span class="clr-icon-title">Home</span>
+                    </button>
+                    <button class="btn">
+                        <clr-icon shape="cog"></clr-icon>
+                        <span class="clr-icon-title">Settings</span>
+                    </button>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div class="clr-row">
+                <div [ngClass]="defaultView == 'card' ? 'clr-col-md-4 clr-col-sm-12 clr-col-6' : 'clr-col-12'"
+                    *ngFor="let repo of repos">
+                    <app-repo-card *ngIf="defaultView == 'card'" [data]="repo"></app-repo-card>
+                    <app-repo-landscape-card *ngIf="defaultView == 'list'" [data]="repo"></app-repo-landscape-card>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

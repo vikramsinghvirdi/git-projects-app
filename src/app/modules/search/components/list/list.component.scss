@@ -1,0 +1,49 @@
+::ng-deep app-list {
+    display: inherit;
+    flex-direction: inherit;
+    height: inherit;
+    background: inherit;
+}
+
+.list-container {
+    .list-header {
+        padding: 0rem 1rem;
+
+        p {
+            margin-top: 0rem;
+        }
+    }
+
+    .list-summary {
+        padding: 0rem 1rem;
+
+        p {
+            margin-top: 0rem;
+        }
+    }
+
+    .list-content {
+        display: flex;
+        flex: 1 1 auto;
+        min-height: 1px;
+
+        .list-content__filters {
+            flex: 0 0 auto;
+            order: -1;
+            overflow: hidden;
+        }
+
+        .list-content__results {
+            flex: 1 1 auto;
+            padding: 1rem;
+            overflow-y: hidden;
+
+            .summary{
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+        }
+
+    }
+}

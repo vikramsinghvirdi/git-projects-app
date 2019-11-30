@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@clr/ui/src/utils/components.clarity";
+@import "../node_modules/@clr/icons/clr-icons.min.css";
+@import "../node_modules/@clr/ui/clr-ui.min.css";
+
+
+.separator{
+    border-bottom: 1px solid #ccc;
+    margin: 1rem 0rem;
+}

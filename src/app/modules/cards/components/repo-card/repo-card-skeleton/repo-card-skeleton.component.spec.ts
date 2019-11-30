@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SummaryBarComponent } from './summary-bar.component';
+import { RepoCardSkeletonComponent } from './repo-card-skeleton.component';
 
-describe('SummaryBarComponent', () => {
-  let component: SummaryBarComponent;
-  let fixture: ComponentFixture<SummaryBarComponent>;
+describe('RepoCardSkeletonComponent', () => {
+  let component: RepoCardSkeletonComponent;
+  let fixture: ComponentFixture<RepoCardSkeletonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SummaryBarComponent ]
+      declarations: [ RepoCardSkeletonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SummaryBarComponent);
+    fixture = TestBed.createComponent(RepoCardSkeletonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

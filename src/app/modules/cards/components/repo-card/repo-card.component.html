@@ -2,10 +2,10 @@
     <div class="card">
         <div class="card-block">
             <div class="card-title">
-                {{data?.name}}
+                {{data?.name | truncate: [20]}}
             </div>
             <div class="card-text">
-                <p class="p1" *ngIf="data?.description">{{data?.description | truncate: [100]}}</p>
+                <p class="p1" *ngIf="data?.description">{{data?.description | truncate: [70]}}</p>
                 
                 <span class="label language" *ngIf="data?.language">{{data?.language}}</span>
                 <div class="status">
@@ -27,11 +27,6 @@
         <div class="card-footer">
             <a [href]="data?.url" target="_blank" class="btn btn-sm btn-link">More Info <clr-icon shape="help-info"></clr-icon>
             </a>
-            <!-- <clr-signpost>
-                <clr-signpost-content [clrPosition]="'bottom-middle'" *clrIfOpen="openState">
-                    Lorem ipsum...
-                </clr-signpost-content>
-            </clr-signpost> -->
         </div>
     </div>
 </article>

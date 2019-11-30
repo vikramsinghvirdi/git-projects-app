@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RepoCardComponent } from './components/repo-card/repo-card.component';
-import { RepoLandscapeCardComponent } from './components/repo-landscape-card/repo-landscape-card.component';
+import { ClarityModule } from '@clr/angular';
+import { NgxContentLoadingModule } from 'ngx-content-loading';
 import { TruncatePipe } from '../../pipes/truncate/truncate.pipe';
-import { ClarityModule, ClrIconModule } from '@clr/angular';
+import { RepoCardComponent } from './components/repo-card/repo-card.component';
+import { RepoCardSkeletonComponent } from './components/repo-card/repo-card-skeleton/repo-card-skeleton.component';
+import { RepoLandscapeCardComponent } from './components/repo-landscape-card/repo-landscape-card.component';
+import { RepoLandscapeCardSkeletonComponent } from './components/repo-landscape-card/repo-landscape-card-skeleton/repo-landscape-card-skeleton.component';
 @NgModule({
-  declarations: [RepoCardComponent, RepoLandscapeCardComponent, TruncatePipe],
+  declarations: [RepoCardComponent, RepoLandscapeCardComponent, TruncatePipe, RepoCardSkeletonComponent, RepoLandscapeCardSkeletonComponent],
   imports: [
     CommonModule,
     ClarityModule,
-    ClrIconModule    
+    NgxContentLoadingModule   
   ],
   exports: [
     RepoCardComponent,
-    RepoLandscapeCardComponent
+    RepoCardSkeletonComponent,
+    RepoLandscapeCardComponent,
+    RepoLandscapeCardSkeletonComponent
   ],
   providers: [
     

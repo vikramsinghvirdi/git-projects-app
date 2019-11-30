@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClarityModule, ClrIconModule } from '@clr/angular';
+import { ClarityModule } from '@clr/angular';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CardsModule } from '../cards/cards.module'
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SearchService } from './services/search.service';
-import { SummaryBarComponent } from './components/summary-bar/summary-bar.component';
-
+import { ShortNumberPipe } from '../../pipes/shortnumber/shortnumber.pipe';
 const routes: Routes = [{
   path: '',
   component: ListComponent,
@@ -20,14 +20,14 @@ const routes: Routes = [{
     ListComponent,
     SearchBarComponent,
     FilterComponent,
-    SummaryBarComponent
+    ShortNumberPipe
   ],
   imports: [
     CommonModule,
     ClarityModule,
-    ClrIconModule,
     CardsModule,
-    RouterModule.forChild(routes),
+    InfiniteScrollModule,
+    RouterModule.forChild(routes)
   ],
   exports: [],
   providers: [SearchService]

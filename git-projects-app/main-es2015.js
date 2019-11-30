@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-container\">\n    <div class=\"alert alert-app-level\">\n        ...\n    </div>\n    <header class=\"header header-6\">\n        <app-header-bar></app-header-bar>\n    </header>\n    <nav class=\"subnav\">\n        ...\n    </nav>\n    <div class=\"content-container\">\n            <router-outlet></router-outlet>\n        <!-- <div class=\"content-area\">\n            ...\n        </div>\n        <nav class=\"sidenav\">\n            ...\n        </nav> -->\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-container\">\n    <!-- <div class=\"alert alert-app-level\">\n        ...\n    </div> -->\n    <header class=\"header header-6\">\n        <app-header-bar></app-header-bar>\n    </header>\n    <main class=\"\">\n        <router-outlet></router-outlet>\n    </main>\n</div>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header class=\"header-1\">\n    <div class=\"branding\">\n        <a class=\"nav-link\">\n            <clr-icon shape=\"shield\"></clr-icon>\n            <span class=\"title\">Angular CLI</span>\n        </a>\n    </div>\n    <div class=\"header-nav\">\n        <a class=\"active nav-link nav-icon\">\n            <clr-icon shape=\"home\"></clr-icon>\n        </a>\n        <a class=\" nav-link nav-icon\">\n            <clr-icon shape=\"cog\"></clr-icon>\n        </a>\n    </div>\n    <form class=\"search\">\n        <label for=\"search_input\">\n            <input id=\"search_input\" type=\"text\" placeholder=\"Search for keywords...\">\n        </label>\n    </form>\n    <div class=\"header-actions\">\n        <clr-dropdown class=\"dropdown bottom-right\">\n            <button class=\"nav-icon\" clrDropdownToggle>\n                <clr-icon shape=\"user\"></clr-icon>\n                <clr-icon shape=\"caret down\"></clr-icon>\n            </button>\n            <div class=\"dropdown-menu\">\n                <a clrDropdownItem>About</a>\n                <a clrDropdownItem>Preferences</a>\n                <a clrDropdownItem>Log out</a>\n            </div>\n        </clr-dropdown>\n    </div>\n</header>\n<nav class=\"subnav\">\n    <ul class=\"nav\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link active\" href=\"#\">Dashboard</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"#\">Projects</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"#\">Reports</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"#\">Users</a>\n        </li>\n    </ul>\n</nav>");
+/* harmony default export */ __webpack_exports__["default"] = ("<header class=\"header\">\n    <div class=\"branding\">\n        <a href=\"javascript:void(0)\" class=\"title\">\n            VMware Open Source Projects\n        </a>\n    </div>\n    <div class=\"header-nav\">\n        <a class=\"active nav-link nav-text\">Home</a>\n    </div>\n</header>");
 
 /***/ }),
 
@@ -359,7 +359,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi8uLi8uLi9hcHAuY29tcG9uZW50LnNjc3MifQ== */");
 
 /***/ }),
 
@@ -416,7 +416,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _clr_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @clr/angular */ "./node_modules/@clr/angular/fesm2015/clr-angular.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _modules_base_base_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/base/base.module */ "./src/app/modules/base/base.module.ts");
@@ -438,7 +438,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _clr_angular__WEBPACK_IMPORTED_MODULE_3__["ClarityModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             _modules_base_base_module__WEBPACK_IMPORTED_MODULE_6__["BaseModule"],
             _modules_not_found_not_found_module__WEBPACK_IMPORTED_MODULE_7__["NotFoundModule"]
@@ -465,9 +465,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _components_base_base_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/base/base.component */ "./src/app/modules/base/components/base/base.component.ts");
-/* harmony import */ var _header_header_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../header/header.module */ "./src/app/modules/header/header.module.ts");
+/* harmony import */ var _clr_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @clr/angular */ "./node_modules/@clr/angular/fesm2015/clr-angular.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _components_base_base_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/base/base.component */ "./src/app/modules/base/components/base/base.component.ts");
+/* harmony import */ var _header_header_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../header/header.module */ "./src/app/modules/header/header.module.ts");
+
 
 
 
@@ -478,14 +480,15 @@ let BaseModule = class BaseModule {
 };
 BaseModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_components_base_base_component__WEBPACK_IMPORTED_MODULE_4__["BaseComponent"]],
+        declarations: [_components_base_base_component__WEBPACK_IMPORTED_MODULE_5__["BaseComponent"]],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"],
-            _header_header_module__WEBPACK_IMPORTED_MODULE_5__["HeaderModule"]
+            _header_header_module__WEBPACK_IMPORTED_MODULE_6__["HeaderModule"],
+            _clr_angular__WEBPACK_IMPORTED_MODULE_3__["ClarityModule"]
         ],
         exports: [
-            _components_base_base_component__WEBPACK_IMPORTED_MODULE_4__["BaseComponent"]
+            _components_base_base_component__WEBPACK_IMPORTED_MODULE_5__["BaseComponent"]
         ]
     })
 ], BaseModule);
@@ -503,7 +506,7 @@ BaseModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvYmFzZS9jb21wb25lbnRzL2Jhc2UvYmFzZS5jb21wb25lbnQuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi8uLi9iYXNlL2NvbXBvbmVudHMvYmFzZS9iYXNlLmNvbXBvbmVudC5zY3NzIn0= */");
 
 /***/ }),
 
@@ -554,7 +557,7 @@ BaseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvaGVhZGVyL2NvbXBvbmVudHMvaGVhZGVyLWJhci9oZWFkZXItYmFyLmNvbXBvbmVudC5zY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi8uLi9oZWFkZXIvY29tcG9uZW50cy9oZWFkZXItYmFyL2hlYWRlci1iYXIuY29tcG9uZW50LnNjc3MifQ== */");
 
 /***/ }),
 
@@ -573,7 +576,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let HeaderBarComponent = class HeaderBarComponent {
-    constructor() { }
+    constructor() {
+        this.headerLinks = [
+            { link: ['/', 'dashboard'], icon: 'home' },
+            { link: ['/', 'settings'], icon: 'cog' },
+        ];
+        this.subLinks = [
+            { link: ['/', 'dashboard'], label: 'Dashboard' },
+            { link: ['/', 'posts'], label: 'Posts' },
+            { link: ['/', 'todos'], label: 'Todos' },
+            { link: ['/', 'users'], label: 'Users' },
+        ];
+    }
     ngOnInit() {
     }
 };
@@ -601,8 +615,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderModule", function() { return HeaderModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _components_header_bar_header_bar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header-bar/header-bar.component */ "./src/app/modules/header/components/header-bar/header-bar.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _clr_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @clr/angular */ "./node_modules/@clr/angular/fesm2015/clr-angular.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _components_header_bar_header_bar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/header-bar/header-bar.component */ "./src/app/modules/header/components/header-bar/header-bar.component.ts");
+
+
 
 
 
@@ -611,12 +629,14 @@ let HeaderModule = class HeaderModule {
 };
 HeaderModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_components_header_bar_header_bar_component__WEBPACK_IMPORTED_MODULE_3__["HeaderBarComponent"]],
+        declarations: [_components_header_bar_header_bar_component__WEBPACK_IMPORTED_MODULE_5__["HeaderBarComponent"]],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"],
+            _clr_angular__WEBPACK_IMPORTED_MODULE_3__["ClarityModule"]
         ],
         exports: [
-            _components_header_bar_header_bar_component__WEBPACK_IMPORTED_MODULE_3__["HeaderBarComponent"]
+            _components_header_bar_header_bar_component__WEBPACK_IMPORTED_MODULE_5__["HeaderBarComponent"]
         ]
     })
 ], HeaderModule);
@@ -634,7 +654,7 @@ HeaderModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvbm90LWZvdW5kL2NvbXBvbmVudHMvbm90LWZvdW5kL25vdC1mb3VuZC5jb21wb25lbnQuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi8uLi9ub3QtZm91bmQvY29tcG9uZW50cy9ub3QtZm91bmQvbm90LWZvdW5kLmNvbXBvbmVudC5zY3NzIn0= */");
 
 /***/ }),
 
@@ -720,8 +740,15 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const API_URL = 'https://api.github.com';
+const ORG_NAME = 'vmware';
+const CLIENT_ID = 'Iv1.df794e5155d0d7f7';
+const CLIENT_SECRET = '6843f9d87f509b50b9d31103e08016899e659e04';
 const environment = {
-    production: false
+    production: false,
+    orgDetail: `${API_URL}/orgs/${ORG_NAME}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
+    listOfRepos: `${API_URL}/orgs/${ORG_NAME}/repos?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
+    listOfProjects: `${API_URL}/orgs/${ORG_NAME}/projects?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
 };
 /*
  * For easier debugging in development mode, you can import the following file

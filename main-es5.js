@@ -467,6 +467,12 @@
             /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
             /* harmony import */ var _modules_base_base_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/base/base.module */ "./src/app/modules/base/base.module.ts");
             /* harmony import */ var _modules_not_found_not_found_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/not-found/not-found.module */ "./src/app/modules/not-found/not-found.module.ts");
+            /* harmony import */ var _clr_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @clr/icons */ "./node_modules/@clr/icons/index.js");
+            /* harmony import */ var _clr_icons__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/ __webpack_require__.n(_clr_icons__WEBPACK_IMPORTED_MODULE_8__);
+            /* harmony import */ var _clr_icons_shapes_essential_shapes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @clr/icons/shapes/essential-shapes */ "./node_modules/@clr/icons/shapes/essential-shapes.js");
+            /* harmony import */ var _clr_icons_shapes_essential_shapes__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/ __webpack_require__.n(_clr_icons_shapes_essential_shapes__WEBPACK_IMPORTED_MODULE_9__);
+            /* harmony import */ var _clr_icons_shapes_social_shapes__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @clr/icons/shapes/social-shapes */ "./node_modules/@clr/icons/shapes/social-shapes.js");
+            /* harmony import */ var _clr_icons_shapes_social_shapes__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/ __webpack_require__.n(_clr_icons_shapes_social_shapes__WEBPACK_IMPORTED_MODULE_10__);
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }

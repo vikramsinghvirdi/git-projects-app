@@ -1,19 +1,36 @@
-<article>
+<article class="repo-landscape-card">
         <div class="card">
-            <div class="card-header">
-                Header
-            </div>
             <div class="card-block">
                 <div class="card-title">
-                    Block
+                    {{data?.name}}
+                    <div class="status">
+                            <span class="label" *ngIf="data?.language">{{data?.language}}</span>
+                            <span *ngIf="data?.stargazers_count">
+                                    <clr-icon shape="star" class="is-solid"></clr-icon>
+                                    {{data?.stargazers_count}}
+                            </span>
+                            <span *ngIf="data?.forks">
+                                    <clr-icon shape="share" class="fork-icon"></clr-icon>
+                                    {{data?.forks}}
+                            </span>
+                            <span *ngIf="data?.watchers_count">
+                                    <clr-icon shape="eye" class="is-solid"></clr-icon>
+                                    {{data?.watchers_count}}
+                            </span>
+                        </div>
                 </div>
-                <div class="card-text">
-                    ...
+                <div class="card-text" *ngIf="data?.description">
+                    <p class="p1">{{data?.description | truncate: [200]}}</p>
                 </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-sm btn-link">Footer Action 1</button>
-                <button class="btn btn-sm btn-link">Footer Action 2</button>
+                <button class="btn btn-sm btn-link">More Info <clr-icon shape="help-info"></clr-icon>
+                </button>
+                <!-- <clr-signpost>
+                    <clr-signpost-content [clrPosition]="'bottom-middle'" *clrIfOpen="openState">
+                        Lorem ipsum...
+                    </clr-signpost-content>
+                </clr-signpost> -->
             </div>
         </div>
     </article>

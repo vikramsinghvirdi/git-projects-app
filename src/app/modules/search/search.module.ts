@@ -8,6 +8,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FilterComponent } from './components/filter/filter.component';
 import { SearchService } from './services/search.service';
 import { SummaryBarComponent } from './components/summary-bar/summary-bar.component';
+
 const routes: Routes = [{
   path: '',
   component: ListComponent,
@@ -15,7 +16,12 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [ListComponent, SearchBarComponent, FilterComponent, SummaryBarComponent],
+  declarations: [
+    ListComponent,
+    SearchBarComponent,
+    FilterComponent,
+    SummaryBarComponent
+  ],
   imports: [
     CommonModule,
     ClarityModule,
@@ -23,7 +29,7 @@ const routes: Routes = [{
     CardsModule,
     RouterModule.forChild(routes),
   ],
-  exports : [ ],
-  providers: [ SearchService ]
+  exports: [],
+  providers: [SearchService]
 })
 export class SearchModule { }

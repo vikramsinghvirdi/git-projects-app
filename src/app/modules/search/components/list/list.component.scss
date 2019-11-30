@@ -38,10 +38,19 @@
             padding: 1rem;
             overflow-y: hidden;
 
-            .summary{
+            .summary {
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
+
+                h4{
+                    margin-top: 0rem;
+                }
+
+                .search-bar {
+                    margin-left: auto;
+                    margin-right: 1rem;
+                }
             }
         }
 

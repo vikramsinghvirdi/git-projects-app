@@ -93,37 +93,32 @@
         <p class="p1">List of all Open Source projects</p>
     </div>
     <div class="list-content">
-        <aside class="list-content__filters">
+        <aside class="list-content__filters clr-hidden-sm-down">
             <app-filter></app-filter>
         </aside>
         <section class="list-content__results">
             <div class="summary">
-                <h4>Showing {{repos.length}} of {{page.total}} Repos</h4>
-                <!-- <div class="btn-group">
+                <h4>Showing {{filteredRepos.length}} of {{page.total}} Projects</h4>
+                <app-search-bar class="search-bar" (onSearchChange)="handleSearch($event)"></app-search-bar>
+                <div class="btn-group clr-hidden-sm-down">
                         <div class="radio btn btn-icon">
                             <input type="radio" name="btn-group-view-type" id="btn-card" value="card" checked (click)="changeView($event)">
-                            <clr-icon shape="home" for="btn-card"></clr-icon>
+                            <label for="btn-card">
+                                    <clr-icon shape="grid-view"></clr-icon>
+                            </label>                            
                         </div>
                         <div class="radio btn btn-icon">
                             <input type="radio" name="btn-group-view-type" id="btn-list" value="list" (click)="changeView($event)">
-                            <label for="btn-list">List</label>
+                            <label for="btn-list">
+                                    <clr-icon shape="view-list"></clr-icon>
+                            </label>
                         </div>
-                    </div> -->
-                <div class="btn-group btn-primary btn-icon">
-                    <button class="btn">
-                        <clr-icon shape="home"></clr-icon>
-                        <span class="clr-icon-title">Home</span>
-                    </button>
-                    <button class="btn">
-                        <clr-icon shape="cog"></clr-icon>
-                        <span class="clr-icon-title">Settings</span>
-                    </button>
-                </div>
+                    </div>
             </div>
             <div class="separator"></div>
             <div class="clr-row">
-                <div [ngClass]="defaultView == 'card' ? 'clr-col-md-4 clr-col-sm-12 clr-col-6' : 'clr-col-12'"
-                    *ngFor="let repo of repos">
+                <div [ngClass]="defaultView == 'card' ? 'clr-col-xl-3  clr-col-lg-4 clr-col-md-6 clr-col-sm-6 clr-col-sx-12 clr-col-12' : 'clr-col-12'"
+                    *ngFor="let repo of filteredRepos">
                     <app-repo-card *ngIf="defaultView == 'card'" [data]="repo"></app-repo-card>
                     <app-repo-landscape-card *ngIf="defaultView == 'list'" [data]="repo"></app-repo-landscape-card>
                 </div>

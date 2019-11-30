@@ -12,7 +12,7 @@ export class SearchService {
 
   }
 
-  getOrgInfo(): Observable<any>{
+  getOrgInfo(): Observable<any> {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -20,8 +20,8 @@ export class SearchService {
     });
 
     return this.http.get(environment.orgDetail, { headers: headers }).pipe(
-      map((res :  any) => {
-            return new Org(res);
+      map((res: any) => {
+        return new Org(res);
       }),
       catchError((error: any) => {
         return this.handleError(error);
@@ -39,9 +39,9 @@ export class SearchService {
 
     let queryString = Object.keys(page).map(key => key + '=' + page[key]).join('&');
 
-    return this.http.get(environment.listOfRepos +'&'+queryString, { headers: headers }).pipe(
-      map((res :  any) => {
-        return res.map((r: any)=>{
+    return this.http.get(environment.listOfRepos + '&' + queryString, { headers: headers }).pipe(
+      map((res: any) => {
+        return res.map((r: any) => {
           return new Repo(r);
         });
       }),
@@ -49,6 +49,17 @@ export class SearchService {
         return this.handleError(error);
       })
     );
+  }
+
+  doSearch(data: any, searchString: any): Promise<any> {
+
+    return new Promise((resolve, reject) => {
+      resolve(data.filter(eachObj => {
+        return eachObj['name'].indexOf(searchString) !=-1 ;
+      })
+      );
+    });
+
   }
 
   private handleError(error: HttpErrorResponse | any) {

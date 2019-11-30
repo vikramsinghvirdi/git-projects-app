@@ -1,1 +1,10 @@
-<p>search-bar works!</p>
+<form class="search-form clr-form">
+    <div class="clr-form-control">
+        <div class="clr-control-container">
+            <div class="clr-input-wrapper">
+                <input type="text" placeholder="Search Projects" (keyup)="onTextChange($event)" class="clr-input search-form__field">
+                <clr-icon class="search-form__icon" shape="search"></clr-icon>
+            </div>
+        </div>
+    </div>
+</form>

@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseModule } from './modules/base/base.module';
 import { NotFoundModule } from './modules/not-found/not-found.module';
-import { ClarityIcons } from "@clr/icons";
+import '@clr/icons';
+import '@clr/icons/shapes/essential-shapes';
+import '@clr/icons/shapes/social-shapes';
 @NgModule({
   declarations: [
     AppComponent

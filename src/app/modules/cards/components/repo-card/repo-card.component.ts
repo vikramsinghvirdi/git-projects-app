@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-
 @Component({
   selector: 'app-repo-card',
   templateUrl: './repo-card.component.html',
@@ -8,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RepoCardComponent implements OnInit {
 
   @Input() data: any;
+  public openState: boolean = false;
   constructor() { }
 
   ngOnInit() {

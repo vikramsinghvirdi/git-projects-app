@@ -1,0 +1,31 @@
+.repo-card {
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 335px;
+        .card-block{
+            border-bottom: 0px;
+            .card-text{
+                .language{
+                    margin-top: 1rem;
+                }
+                .status{
+                    margin-top: 1rem;
+                    display:flex;
+                    flex-direction: row;
+                    span{
+                        margin-right: 0.6rem;
+                        vertical-align: top;
+                    }    
+                    .fork-icon{
+                        transform: rotate(270deg);
+                    }
+                }
+            }
+        }
+        .card-footer{
+            border-top: 1px solid #ededed;
+        }
+    }
+}

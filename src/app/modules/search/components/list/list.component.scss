@@ -91,6 +91,7 @@
     .list-content__results {
         .list-content__results__summary {
             flex-direction: column;
+            position: relative;
 
             .list-content__results__search-bar {
                 margin-left: 0rem !important;
@@ -98,6 +99,27 @@
             }
 
             .list-content__results__filter-button{
+                position: absolute;
+                right: 0;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+@media(max-width:370px) {
+    .list-content__results {
+        .list-content__results__summary {
+            flex-direction: column;
+            position: relative;
+
+            .list-content__results__search-bar {
+                margin-left: 0rem !important;
+                margin-right: 1rem;
+            }
+
+            .list-content__results__filter-button{
+                position: relative;
                 margin-top: 1rem;
             }
         }

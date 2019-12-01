@@ -1,31 +1,36 @@
 <article class="repo-card">
     <div class="card">
         <div class="card-block">
-            <div class="card-title">
+            <div class="card-title" i18n>
                 {{data?.name | truncate: ['20']}}
             </div>
             <div class="card-text">
-                <p class="p1" *ngIf="data?.description">{{data?.description | truncate: ['70']}}</p>
-                
-                <span class="label language" *ngIf="data?.language">{{data?.language}}</span>
+                <p class="p1" *ngIf="data?.description" i18n>{{data?.description | truncate: ['70']}}</p>
+
+                <span class="label language" *ngIf="data?.language" i18n>{{data?.language}}</span>
                 <div class="status">
-                    <span *ngIf="data?.stargazers_count">
-                            <clr-icon shape="star" class="is-solid"></clr-icon>
-                            {{data?.stargazers_count}}
+                    <span *ngIf="data?.stargazers_count" role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs"  i18n>
+                        <clr-icon shape="star" class="is-solid"></clr-icon>
+                        {{data?.stargazers_count}}
+                        <span class="tooltip-content">Stargazers</span>
                     </span>
-                    <span *ngIf="data?.forks">
-                            <clr-icon shape="share" class="fork-icon"></clr-icon>
-                            {{data?.forks}}
+                    <span *ngIf="data?.forks" role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs"  i18n>
+                        <clr-icon shape="share" class="fork-icon"></clr-icon>
+                        {{data?.forks}}
+                        <span class="tooltip-content">Forks</span>
                     </span>
-                    <span *ngIf="data?.watchers_count">
-                            <clr-icon shape="eye" class="is-solid"></clr-icon>
-                            {{data?.watchers_count}}
+                    <span *ngIf="data?.watchers_count" role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs"  i18n>
+                        <clr-icon shape="eye" class="is-solid"></clr-icon>
+                        {{data?.watchers_count}}
+                        <span class="tooltip-content">Watchers  </span>
                     </span>
                 </div>
             </div>
         </div>
         <div class="card-footer">
-            <a [href]="data?.url" target="_blank" class="btn btn-sm btn-link">More Info <clr-icon shape="help-info"></clr-icon>
+            <a [href]="data?.url" target="_blank" class="btn btn-link" i18n>KNOW MORE
+                <clr-icon shape="help-info"></clr-icon>
+                
             </a>
         </div>
     </div>

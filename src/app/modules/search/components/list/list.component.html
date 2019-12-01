@@ -1,18 +1,21 @@
-<div class="list-container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="200"
+<main class="list-container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="200"
     [infiniteScrollUpDistance]="1.5" [infiniteScrollDisabled]="infiniteScrollDisabled" (scrolled)="onScrollDown()"
     [fromRoot]="true" [scrollWindow]="true">
     <div class="list-header">
-        <h3>GitHub Projects</h3>
-        <p class="p1">List of all Open Source projects</p>
+        <h3 i18n>GitHub Projects</h3>
+        <p class="p1" i18n>List of all Open Source Projects</p>
     </div>
     <div class="list-content">
         <aside class="list-content__filters clr-hidden-sm-down">
             <app-filter (onSortByChange)="applySortBy($event)"></app-filter>
         </aside>
         <section class="list-content__results">
-            <div class="summary">
-                <h4>Showing {{filteredRepos.length}} of {{page.total | shortNumber}} Projects</h4>
-                <app-search-bar class="search-bar" (onSearchChange)="handleSearch($event)"></app-search-bar>
+            <div class="list-content__results__summary">
+                <h4 i18n>Showing {{filteredRepos.length}} of {{page.total | shortNumber}} Projects</h4>
+                <app-search-bar class="list-content__results__search-bar" (onSearchChange)="handleSearch($event)">
+                </app-search-bar>
+                <button class="list-content__results__filter-button btn btn-outline clr-hidden-md-up" (click)="toggleFiltersPanel($event)">Filters<clr-icon
+                        class="filter-button__icon" [ngClass]=" showFiltersPanel ? '' : 'collapsed'" shape="angle"></clr-icon></button>
                 <div class="btn-group clr-hidden-sm-down">
                     <div class="radio btn btn-icon">
                         <input type="radio" name="btn-group-view-type" id="btn-card" value="card"
@@ -30,10 +33,14 @@
                     </div>
                 </div>
             </div>
+            <div class="list-content__results__collapsible_filters clr-hidden-md-up" [ngClass]="showFiltersPanel ? 'open' : ''">
+                <app-filter (onSortByChange)="applySortBy($event)"></app-filter>
+            </div>
             <div class="separator"></div>
             <div class="data-list">
                 <div class="clr-row data-list__loader" *ngIf="isSkeltonLoading">
-                    <div [ngClass]="defaultView == 'card' ? 'clr-col-xl-3  clr-col-lg-4 clr-col-md-6 clr-col-sm-6 clr-col-sx-12 clr-col-12' : 'clr-col-12'" *ngFor="let item of [1,2,3,4,5,6,7,8]">
+                    <div [ngClass]="defaultView == 'card' ? 'clr-col-xl-3  clr-col-lg-4 clr-col-md-6 clr-col-sm-6 clr-col-sx-12 clr-col-12' : 'clr-col-12'"
+                        *ngFor="let item of [1,2,3,4,5,6,7,8]">
                         <app-repo-card-skeleton *ngIf="defaultView == 'card'"></app-repo-card-skeleton>
                         <app-repo-landscape-card-skeleton *ngIf="defaultView == 'list'">
                         </app-repo-landscape-card-skeleton>
@@ -50,4 +57,4 @@
             </div>
         </section>
     </div>
-</div>
+</main>

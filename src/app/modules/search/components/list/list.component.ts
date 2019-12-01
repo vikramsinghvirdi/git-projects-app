@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { Repo } from 'src/app/models/Repo/repo.model';
 import { Org } from 'src/app/models/Org/org.model';
-import { ConnectionServiceModule } from 'ng-connection-service';
 
 @Component({
   selector: 'app-list',
@@ -26,6 +25,7 @@ export class ListComponent implements OnInit {
   defaultView: string = 'card';
   isSkeltonLoading: boolean = true;
   searchString: string = '';
+  showFiltersPanel: boolean = false;
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
@@ -47,10 +47,6 @@ export class ListComponent implements OnInit {
     );
 
 
-  }
-
-  handlePageChange(page: any) {
-    console.log(page);
   }
 
   getRepos(page: any, callback: any) {
@@ -128,5 +124,9 @@ export class ListComponent implements OnInit {
       this.infiniteScrollDisabled = true;
       this.scrollTop = true;
     }
+  }
+
+  toggleFiltersPanel(event){
+    this.showFiltersPanel = !this.showFiltersPanel;
   }
 }

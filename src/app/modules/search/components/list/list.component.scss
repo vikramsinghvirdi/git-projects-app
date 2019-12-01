@@ -7,6 +7,7 @@
 
 .list-container {
     background: #fafafa;
+
     .list-header {
         padding: 0rem 1rem;
 
@@ -39,22 +40,66 @@
             padding: 1rem;
             overflow-y: hidden;
 
-            .summary {
+            .list-content__results__summary {
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
 
-                h4{
+                h4 {
                     margin-top: 0rem;
                 }
 
-                .search-bar {
+                .list-content__results__search-bar {
                     margin-left: auto;
                     margin-right: 1rem;
                 }
+
+                .list-content__results__filter-button {
+                    .filter-button__icon.collapsed {
+                        transform: rotate(180deg);
+                    }
+
+                }
             }
-            
+
+            .list-content__results__collapsible_filters {
+                height: 0px;
+                overflow: hidden;
+                -webkit-transition: height 0.5s linear;
+                -moz-transition: height 0.5s linear;
+                -ms-transition: height 0.5s linear;
+                -o-transition: height 0.5s linear;
+                transition: height 0.5s linear;
+            }
+
+            .list-content__results__collapsible_filters.open {
+                height: 230px;
+                -webkit-transition: height 0.5s linear;
+                -moz-transition: height 0.5s linear;
+                -ms-transition: height 0.5s linear;
+                -o-transition: height 0.5s linear;
+                transition: height 0.5s linear;
+            }
+
         }
 
+    }
+}
+
+
+@media(max-width:480px) {
+    .list-content__results {
+        .list-content__results__summary {
+            flex-direction: column;
+
+            .list-content__results__search-bar {
+                margin-left: 0rem !important;
+                margin-right: 1rem;
+            }
+
+            .list-content__results__filter-button{
+                margin-top: 1rem;
+            }
+        }
     }
 }

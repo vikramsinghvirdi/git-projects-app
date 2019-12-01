@@ -1,74 +1,45 @@
 <section class="filters">
     <div class="filters__sort-by">
-        <h5>Sort By</h5>
+        <h5 i18n>Sort By</h5>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="created_at" name="sort_by_options" (change)="updateSortBy('created_at', 'date')"
                 checked />
-            <label>Creation Date</label>
+            <label i18n>Creation Date</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="updated_at" name="sort_by_options"
                 (change)="updateSortBy('updated_at', 'date')" />
-            <label>Update Date</label>
+            <label i18n>Update Date</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="name" name="sort_by_options" (change)="updateSortBy('name', 'string')" />
-            <label>Name</label>
+            <label i18n>Name</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="stargazers_count" name="sort_by_options"
                 (change)="updateSortBy('stargazers_count', 'number')" />
-            <label>Stargazers Count</label>
+            <label i18n>Popularity</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="forks" name="sort_by_options" (change)="updateSortBy('forks', 'number')" />
-            <label>Fork Count</label>
+            <label i18n>Fork Count</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="watchers_count" name="sort_by_options"
                 (change)="updateSortBy('watchers_count', 'number')" />
-            <label>Watchers Count</label>
+            <label i18n>Watchers Count</label>
         </clr-radio-wrapper>
     </div>
     <div class="separator"></div>
-    <div class="filters__sort-by">
-        <h5>Sort order</h5>
+    <div class="filters__sort-order">
+        <h5 i18n>Sort order</h5>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="asc" name="sort_order_options" (change)="updateSortOrder('asc')" checked />
-            <label>Ascending</label>
+            <label i18n>Ascending</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
             <input type="radio" clrRadio value="desc" name="sort_order_options" (change)="updateSortOrder('desc')" />
-            <label>Descencding</label>
+            <label i18n>Descencding</label>
         </clr-radio-wrapper>
-    </div>
-    <!--
-    <div class="filters__sort-by">
-        <h5>Languages</h5>
-        <clr-radio-wrapper>
-                <input type="radio" clrRadio value="name" name="sort_by_options" />
-                <label>Name</label>
-            </clr-radio-wrapper>
-            <clr-radio-wrapper>
-                <input type="radio" clrRadio value="language" name="sort_by_options" />
-                <label>Language</label>
-            </clr-radio-wrapper>
-            <clr-radio-wrapper>
-                <input type="radio" clrRadio value="forks" name="sort_by_options" />
-                <label>Fork Count</label>
-            </clr-radio-wrapper>
-            <clr-radio-wrapper>
-                <input type="radio" clrRadio value="watchers_count" name="sort_by_options" />
-                <label>Watchers Count</label>
-            </clr-radio-wrapper>
-            <clr-radio-wrapper>
-                <input type="radio" clrRadio value="created_at" name="sort_by_options" />
-                <label>Creation Date</label>
-            </clr-radio-wrapper>
-            <clr-radio-wrapper>
-                <input type="radio" clrRadio value="updated_at" name="sort_by_options" />
-                <label>Update Date</label>
-            </clr-radio-wrapper>
-    </div>
-    <div class="separator"></div> -->
+    </div>    
 </section>

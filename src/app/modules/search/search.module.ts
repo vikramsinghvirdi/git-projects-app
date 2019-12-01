@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { CardsModule } from '../cards/cards.module'
 import { Routes, RouterModule } from '@angular/router';
+
+import { CardsModule } from '../cards/cards.module'
+
 import { ListComponent } from './components/list/list.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FilterComponent } from './components/filter/filter.component';
@@ -26,7 +28,7 @@ const routes: Routes = [{
     CommonModule,
     ClarityModule,
     CardsModule,
-    InfiniteScrollModule,
+     InfiniteScrollModule,
     RouterModule.forChild(routes)
   ],
   exports: [],

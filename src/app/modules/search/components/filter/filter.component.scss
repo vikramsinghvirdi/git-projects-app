@@ -1,4 +1,4 @@
-.filters{
+.filters {
     line-height: 1rem;
     max-width: 13rem;
     min-width: 9rem;
@@ -7,11 +7,37 @@
     flex-direction: column;
     padding: 1.5rem 1rem 1rem 1rem;
 
-    h5{
+    h5 {
         margin-bottom: 1rem;
     }
 
-    .separator{
+    .separator {
         margin-bottom: 0rem;
+    }
+}
+
+@media(max-width:767px) {
+    .filters {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0rem;
+
+        .filters__sort-by {
+            flex: 1 1 auto;
+            margin-right: 1rem;
+        }
+
+        .separator {
+            display: none;
+        }
+    }
+}
+
+
+@media(max-width:480px) {
+    .filters {
+        justify-content: start;
     }
 }

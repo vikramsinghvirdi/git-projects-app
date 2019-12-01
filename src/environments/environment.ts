@@ -11,7 +11,8 @@ export const environment = {
   production: false,
   orgDetail: `${API_URL}/orgs/${ORG_NAME}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
   listOfRepos: `${API_URL}/orgs/${ORG_NAME}/repos?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
-  listOfProjects: `${API_URL}/orgs/${ORG_NAME}/projects?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+  listOfProjects: `${API_URL}/orgs/${ORG_NAME}/projects?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
+  topReferrers: `${API_URL}/repos/${ORG_NAME}/$REPO_NAME/traffic/popular/referrers?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
 };
 
 /*

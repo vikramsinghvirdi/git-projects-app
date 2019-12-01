@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseModule } from './modules/base/base.module';
-import { NotFoundModule } from './modules/not-found/not-found.module';
 import '@clr/icons';
 import '@clr/icons/shapes/essential-shapes';
 import '@clr/icons/shapes/social-shapes';
@@ -14,10 +14,10 @@ import '@clr/icons/shapes/social-shapes';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    BaseModule,
-    NotFoundModule
+    BaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
     name: 'shortNumber'
 })
+/**
+ * ShortNumberPipe pipe to convert large numbers to
+ * short numbers K, M, B, T and Q.
+ */
 export class ShortNumberPipe implements PipeTransform {
 
     transform(number: number, args?: any): any {

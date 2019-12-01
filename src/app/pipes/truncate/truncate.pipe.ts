@@ -3,6 +3,13 @@ import {Pipe, PipeTransform} from '@angular/core';
 @Pipe({
   name: 'truncate'
 })
+/**
+ * TruncatePipe pipe to convert large strings into
+ * short strings and concatenate ... at the end.
+ * Limit for string can be specified in args array.
+ * @param value : string
+ * @param args: array
+ */
 export class TruncatePipe implements PipeTransform {
   transform(value: string, args: string[]): string {
     if (value) {

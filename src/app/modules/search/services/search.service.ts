@@ -12,6 +12,11 @@ export class SearchService {
 
   }
 
+
+  /**
+   * Fetches organization details
+   * Org name is passed thru environment.orgDetail URL
+  */
   getOrgInfo(): Observable<any> {
 
     const headers = new HttpHeaders({
@@ -30,6 +35,14 @@ export class SearchService {
 
   }
 
+  /**
+   * Fetches list of all Repos for an organization.
+   * environment.listOfRepos URL contains organization name for API endpoint
+   * and this function accepts one object input page with pagination details
+   * per_page : to specify number of entires per page
+   * page :  to specify current page number to fetch
+    * @param page - Object 
+   */
   getListOfAllRepos(page: any): Observable<any> {
 
     const headers = new HttpHeaders({
@@ -51,6 +64,13 @@ export class SearchService {
     );
   }
 
+  /**
+   * Performs in-browser search on repo list which can be implemented
+   * thru API end point. For now this function takes array of repos in 'data' argument and
+   * searches for matches of 'searchString' and returns all the matches found in form of Promise
+    * @param data - array
+    * @param searchString - string
+   */
   doSearch(data: any, searchString: any): Promise<any> {
     return new Promise((resolve, reject) => {
       resolve(data.filter(eachObj => {
@@ -60,6 +80,17 @@ export class SearchService {
     });
   }
 
+  /**
+   * Performs in-browser sorting on repo list which can be implemented
+   * thru API end point. For now this function takes array of repos in 'data' argument and
+   * 'sortConfig' and returns sorted array in form of Promise. 
+   * 'sortConfig' contains - 
+   * 'sortBy' to specify field name
+   * 'type' to specify data type for field name
+   * 'order' to specify sorting order
+    * @param data - array
+    * @param sortConfig - object
+  */
   sortRepos(data: any, sortConfig: any): Promise<any> {
     let sortBy = sortConfig['sort_by'];
     let fieldType = sortConfig['type'];
@@ -101,20 +132,11 @@ export class SearchService {
     });
   }
 
-  compare(a, b) {
-    // Use toUpperCase() to ignore character casing
-    const itemA = a.band.toUpperCase();
-    const itemB = b.band.toUpperCase();
-
-    let comparison = 0;
-    if (itemA > itemB) {
-      comparison = 1;
-    } else if (itemA < itemB) {
-      comparison = -1;
-    }
-    return comparison;
-  }
-
+    
+  /**
+   * This function handles error thrown by HTTP call.
+    * @param error - HttpErrorResponse
+  */
   private handleError(error: HttpErrorResponse | any) {
     let errMsg: string;
     if (Error && error instanceof Error) {

@@ -28,6 +28,9 @@ export class ListComponent implements OnInit {
   showFiltersPanel: boolean = false;
   constructor(private searchService: SearchService) { }
 
+  /**
+   * Getting organization information and list of all repos
+   */
   ngOnInit() {
 
     const me = this;
@@ -45,10 +48,16 @@ export class ListComponent implements OnInit {
         this.error = err.message;
       }
     );
-
-
   }
 
+
+/**
+ * Function is used to get list of all resos.
+ * Takes pagination config 'page' as argument and
+ * callback function to call once data is retrieved.
+ * @param page : Object
+ * @param callback : Function
+ */
   getRepos(page: any, callback: any) {
     this.isSkeltonLoading = true;
     this.searchService.getListOfAllRepos(page).subscribe(
@@ -62,11 +71,18 @@ export class ListComponent implements OnInit {
     );
   }
 
+  /**
+   * Function to toggle view type of data between card/list
+   */
   changeView(event: any) {
     if (event && event.target.value)
       this.defaultView = event.target.value;
   }
 
+  /**
+   * Function is called when searching for a repo
+   * @param event : Object
+   */
   handleSearch(event: any) {
     this.isSkeltonLoading = true;
     this.searchString = event.value;
@@ -81,6 +97,11 @@ export class ListComponent implements OnInit {
       }).catch((error) => { });
   }
 
+  /**
+   * Function is called when sorting order is
+   * selected from left panel of listing page.
+   * @param event : Object
+   */
   applySortBy(event: any){
     this.isSkeltonLoading = true;
     if (event.value == '') {
@@ -126,6 +147,10 @@ export class ListComponent implements OnInit {
     }
   }
 
+  /**
+   * Show/Hide filters panel and
+   * @param event 
+   */
   toggleFiltersPanel(event){
     this.showFiltersPanel = !this.showFiltersPanel;
   }

@@ -18,13 +18,23 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
   }
 
-  updateSortBy(sort_by: any, type: any){
+  /**
+   * To update field name to use for sorting
+   * and data field of sort field.
+   * @param sort_by : string
+   * @param type : string
+   */
+  updateSortBy(sort_by: string, type: string){
     this.sortConfig['sort_by'] = sort_by;
     this.sortConfig['type'] = type;
     this.onSortByChange.emit(this.sortConfig);
   }
 
-  updateSortOrder(sort_order: any){
+  /**
+   * To update sort order for sorting.
+   * @param sort_order : string
+   */
+  updateSortOrder(sort_order: string){
     this.sortConfig['order'] = sort_order;
     this.onSortByChange.emit(this.sortConfig);
   }

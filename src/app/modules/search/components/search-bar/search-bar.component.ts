@@ -13,6 +13,10 @@ export class SearchBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * To fire event when ther is a change in search string
+   * @param event : Object
+   */
   onTextChange(event: any){
     this.onSearchChange.emit({
       value: event.target.value

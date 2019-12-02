@@ -11,43 +11,6 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) { }
 
   /**
-   * Creating XMLHttpRequest to handle CORS requests.
-   * This can be done with npm packages like gatekeeper and OAuth2
-   * to avoid openly passing secret keys. For demo purpose using
-   * herokuapp reverse proxy url because GitHub Authentication call
-   * does not support CORS
-   * @param url : string - target url
-   * @param methodType : string - GET/POST
-   * @param params : object - parameters for url
-   */
-  createCORSRequest(url: any, methodType: any, params?: any): Promise<any> {
-
-    return new Promise((resolve, reject) => {
-      let req = new XMLHttpRequest();
-      let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-      req.open(methodType,
-        'https://cors-anywhere.herokuapp.com/' + url,
-        true);
-      req.setRequestHeader('Accept', 'application/json');
-      req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      if (params) req.send(queryString);
-      req.onreadystatechange = function () {
-        if (req.readyState === 4) {
-          let responseJSON = JSON.parse(req.response)
-          if (responseJSON['error']) {
-            reject(responseJSON.error_description)
-          }
-          else
-            resolve(responseJSON);
-        }
-      }
-      req.onerror = function () {
-        reject('Failed to get response from server');
-      }
-    });
-  }
-
-  /**
    * Validates the code returned by GitHub during authorization.
    * Once code is validated GitHub OAuth will return access_token
    * to be used across all API calls for authentication.
@@ -63,14 +26,25 @@ export class UserService {
       client_id: environment.clientId,
       client_secret: environment.clientSecret
     }
+
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    });
+
     return new Promise((resolve, reject) => {
-      this.createCORSRequest(environment.validateCodeUrl, 'POST', params).then((res) => {
-        localStorage.setItem('access_token', res.access_token);
+      this.http.post(environment.validateCodeUrl, JSON.stringify(params), {
+        headers: headers,
+        responseType: 'json'
+      }).subscribe(res => {
+        if (res['access_token'])
+          localStorage.setItem('access_token', res['access_token']);
         resolve(res);
-      }).catch((error) => {
-        reject(error);
+      }, (err) => {
+        reject(err);
       });
     });
+
   }
 
   /**
@@ -105,7 +79,7 @@ export class UserService {
    * Clears local storage access_token and red-directs
    * user to login page for fresh login
    */
-  logout(){
+  logout() {
     localStorage.removeItem('access_token');
     this.router.navigate(['/login']);
   }

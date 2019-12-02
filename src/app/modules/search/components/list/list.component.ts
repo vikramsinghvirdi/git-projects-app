@@ -65,13 +65,13 @@ export class ListComponent implements OnInit {
 
   /**
    * This will always set default data view to CARD view
-   * instead if LIST view if device width is less or equal to 650px
+   * instead if LIST view if device width is less or equal to 970px
    * for better experience and readibility on smaller devices
    * @param event 
    */
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    if(event.target.innerWidth <= 650)
+    if(event.target.innerWidth <= 970)
     this.defaultView = 'card'
   }
 

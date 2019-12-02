@@ -4,17 +4,17 @@
             <div class="card-title truncate-1" i18n>
                 {{data?.name}}
                 <div class="status">
-                        <span class="update-date p7">Updated {{data?.updated_at | dateAgo}}</span>
+                    <span class="update-date p7">Updated {{data?.updated_at | dateAgo}}</span>
                     <span class="label" *ngIf="data?.language" i18n>{{data?.language}}</span>
-                    <span *ngIf="data?.stargazers_count" i18n>
-                        <clr-icon shape="star" class="is-solid" data-tooltip="Stargazers"></clr-icon>
+                    <span *ngIf="data?.stargazers_count" data-tooltip="Stargazers " class="tooltip-bottom" i18n>
+                        <clr-icon shape="star" class="is-solid"></clr-icon>
                         {{data?.stargazers_count}}
                     </span>
-                    <span *ngIf="data?.forks" data-tooltip="Forks"  i18n>
+                    <span *ngIf="data?.forks" data-tooltip="Forks " class="tooltip-bottom" i18n>
                         <clr-icon shape="share" class="fork-icon"></clr-icon>
                         {{data?.forks}}
                     </span>
-                    <span *ngIf="data?.watchers_count" data-tooltip="Watchers" i18n>
+                    <span *ngIf="data?.watchers_count" data-tooltip="Watchers " class="tooltip-bottom" i18n>
                         <clr-icon shape="eye" class="is-solid"></clr-icon>
                         {{data?.watchers_count}}
                     </span>

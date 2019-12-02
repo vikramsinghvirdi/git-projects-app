@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'truncate'
 })
 /**
- * TruncatePipe pipe to convert large strings into
+ * TruncatePipe is used to convert large strings into
  * short strings and concatenate ... at the end.
  * Limit for string can be specified in args array.
  * @param value : string

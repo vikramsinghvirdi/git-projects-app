@@ -4,6 +4,7 @@
             <div class="card-title truncate-1" i18n>
                 {{data?.name}}
                 <div class="status">
+                        <span class="update-date p7">Updated {{data?.updated_at | dateAgo}}</span>
                     <span class="label" *ngIf="data?.language" i18n>{{data?.language}}</span>
                     <span *ngIf="data?.stargazers_count" i18n>
                         <clr-icon shape="star" class="is-solid" data-tooltip="Stargazers"></clr-icon>

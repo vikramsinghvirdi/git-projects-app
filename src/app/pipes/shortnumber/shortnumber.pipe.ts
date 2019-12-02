@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'shortNumber'
 })
 /**
- * ShortNumberPipe pipe to convert large numbers to
+ * ShortNumberPipe is used to convert large numbers to
  * short numbers K, M, B, T and Q.
  */
 export class ShortNumberPipe implements PipeTransform {

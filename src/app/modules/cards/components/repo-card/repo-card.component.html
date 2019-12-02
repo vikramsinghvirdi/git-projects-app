@@ -9,6 +9,7 @@
 
                 <div class="card-text__more-info">
                     <span class="label language" *ngIf="data?.language" i18n>{{data?.language}}</span>
+                    <span class="update-date p7">Updated {{data?.updated_at | dateAgo}}</span>
                     <div class="status">
                         <span *ngIf="data?.stargazers_count" data-tooltip="Stargazers" class="tooltip-right" i18n>
                             <clr-icon shape="star" class="is-solid"></clr-icon>

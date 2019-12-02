@@ -1,3 +1,6 @@
+/*
+* Org model to define properties for organizations on GitHub
+*/
 export class Org {
     id: any;
     name: string;

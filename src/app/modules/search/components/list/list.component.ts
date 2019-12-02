@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { Repo } from 'src/app/models/Repo/repo.model';
 import { Org } from 'src/app/models/Org/org.model';
@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
   isSkeltonLoading: boolean = true;
   searchString: string = '';
   showFiltersPanel: boolean = false;
+  isSticky: boolean;
   constructor(private searchService: SearchService) { }
 
   /**
@@ -48,16 +49,40 @@ export class ListComponent implements OnInit {
         this.error = err.message;
       }
     );
+
+    if(window.innerWidth<=650){
+      this.defaultView = 'card';
+    }
+
+    /**
+     * Listening to page scroll to make sidebar options
+     * sticky and visible all the time for width > 768px
+     */
+    window.addEventListener('scroll', function(){
+      me.isSticky = window.scrollY > 160 && window.innerWidth > 768
+    }, true);
+  }
+
+  /**
+   * This will always set default data view to CARD view
+   * instead if LIST view if device width is less or equal to 650px
+   * for better experience and readibility on smaller devices
+   * @param event 
+   */
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if(event.target.innerWidth <= 650)
+    this.defaultView = 'card'
   }
 
 
-/**
- * Function is used to get list of all resos.
- * Takes pagination config 'page' as argument and
- * callback function to call once data is retrieved.
- * @param page : Object
- * @param callback : Function
- */
+  /**
+   * Function is used to get list of all resos.
+   * Takes pagination config 'page' as argument and
+   * callback function to call once data is retrieved.
+   * @param page : Object
+   * @param callback : Function
+   */
   getRepos(page: any, callback: any) {
     this.isSkeltonLoading = true;
     this.searchService.getListOfAllRepos(page).subscribe(
@@ -102,13 +127,13 @@ export class ListComponent implements OnInit {
    * selected from left panel of listing page.
    * @param event : Object
    */
-  applySortBy(event: any){
+  applySortBy(event: any) {
     this.isSkeltonLoading = true;
     if (event.value == '') {
       this.filteredRepos = this.repos; //Using already cached repos list instead of fetching it again
       this.isSkeltonLoading = false;
     }
-    else{
+    else {
       this.searchService.sortRepos(this.repos, event).then((res) => {
         this.repos = res;
         this.filteredRepos = res;
@@ -117,8 +142,8 @@ export class ListComponent implements OnInit {
     }
 
     //If search string exists apply search over sorted list
-    if(this.searchString !== '')
-      this.handleSearch({value: this.searchString});
+    if (this.searchString !== '')
+      this.handleSearch({ value: this.searchString });
   }
 
   /**
@@ -151,7 +176,7 @@ export class ListComponent implements OnInit {
    * Show/Hide filters panel and
    * @param event 
    */
-  toggleFiltersPanel(event){
+  toggleFiltersPanel(event) {
     this.showFiltersPanel = !this.showFiltersPanel;
   }
 }

@@ -1,0 +1,16 @@
+.header-nav{
+    .header-actions{
+        right: 0;
+        position: absolute;
+    }
+}
+
+@media(max-width:767px) {
+    .header-nav{
+        .header-actions{
+           .user-options{
+               color: #000;
+           }
+        }
+    }
+}

@@ -1,31 +1,31 @@
-<section class="filters">
+<section class="filters" id="filter-form-{{instanceCounter}}">
     <div class="filters__sort-by">
         <h5 i18n>Sort By</h5>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="created_at" name="sort_by_options" (change)="updateSortBy('created_at', 'date')"
+            <input type="radio" clrRadio value="created_at" name="sort_by_options-{{instanceCounter}}" (change)="updateSortBy('created_at', 'date')"
                 checked />
             <label i18n>Creation Date</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="updated_at" name="sort_by_options"
+            <input type="radio" clrRadio value="updated_at" name="sort_by_options-{{instanceCounter}}"
                 (change)="updateSortBy('updated_at', 'date')" />
             <label i18n>Update Date</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="name" name="sort_by_options" (change)="updateSortBy('name', 'string')" />
+            <input type="radio" clrRadio value="name" name="sort_by_options-{{instanceCounter}}" (change)="updateSortBy('name', 'string')" />
             <label i18n>Name</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="stargazers_count" name="sort_by_options"
+            <input type="radio" clrRadio value="stargazers_count" name="sort_by_options-{{instanceCounter}}"
                 (change)="updateSortBy('stargazers_count', 'number')" />
             <label i18n>Popularity</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="forks" name="sort_by_options" (change)="updateSortBy('forks', 'number')" />
+            <input type="radio" clrRadio value="forks" name="sort_by_options-{{instanceCounter}}" (change)="updateSortBy('forks', 'number')" />
             <label i18n>Fork Count</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="watchers_count" name="sort_by_options"
+            <input type="radio" clrRadio value="watchers_count" name="sort_by_options-{{instanceCounter}}"
                 (change)="updateSortBy('watchers_count', 'number')" />
             <label i18n>Watchers Count</label>
         </clr-radio-wrapper>
@@ -34,11 +34,11 @@
     <div class="filters__sort-order">
         <h5 i18n>Sort Order</h5>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="asc" name="sort_order_options" (change)="updateSortOrder('asc')" checked />
+            <input type="radio" clrRadio value="asc" name="sorsort_order_options-{{instanceCounter}}" (change)="updateSortOrder('asc')" checked />
             <label i18n>Ascending</label>
         </clr-radio-wrapper>
         <clr-radio-wrapper>
-            <input type="radio" clrRadio value="desc" name="sort_order_options" (change)="updateSortOrder('desc')" />
+            <input type="radio" clrRadio value="desc" name="sorsort_order_options-{{instanceCounter}}" (change)="updateSortOrder('desc')" />
             <label i18n>Descending</label>
         </clr-radio-wrapper>
     </div>    

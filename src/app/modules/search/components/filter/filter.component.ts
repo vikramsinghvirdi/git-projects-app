@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
+  @Input() instanceCounter: any;
   @Output() onSortByChange: EventEmitter<any> = new EventEmitter();
   sortConfig: any = {
     sort_by : 'created_at',

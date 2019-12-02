@@ -1,29 +1,26 @@
 <article class="repo-landscape-card">
     <div class="card">
         <div class="card-block">
-            <div class="card-title" i18n>
+            <div class="card-title truncate-1" i18n>
                 {{data?.name}}
                 <div class="status">
                     <span class="label" *ngIf="data?.language" i18n>{{data?.language}}</span>
-                    <span *ngIf="data?.stargazers_count" role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs"  i18n>
-                        <clr-icon shape="star" class="is-solid"></clr-icon>
+                    <span *ngIf="data?.stargazers_count" i18n>
+                        <clr-icon shape="star" class="is-solid" data-tooltip="Stargazers"></clr-icon>
                         {{data?.stargazers_count}}
-                        <span class="tooltip-content">Stargazers</span>
                     </span>
-                    <span *ngIf="data?.forks" role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs"  i18n>
+                    <span *ngIf="data?.forks" data-tooltip="Forks"  i18n>
                         <clr-icon shape="share" class="fork-icon"></clr-icon>
                         {{data?.forks}}
-                        <span class="tooltip-content">Forks</span>
                     </span>
-                    <span *ngIf="data?.watchers_count" role="tooltip" aria-haspopup="true" class="tooltip tooltip-xs"  i18n>
+                    <span *ngIf="data?.watchers_count" data-tooltip="Watchers" i18n>
                         <clr-icon shape="eye" class="is-solid"></clr-icon>
                         {{data?.watchers_count}}
-                        <span class="tooltip-content">Watchers</span>
                     </span>
                 </div>
             </div>
             <div class="card-text" *ngIf="data?.description" i18n>
-                <p class="p1">{{data?.description | truncate: ['200']}}</p>
+                <p class="p1 truncate-1">{{data?.description}}</p>
             </div>
         </div>
         <div class="card-footer">

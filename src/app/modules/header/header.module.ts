@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ClarityModule } from '@clr/angular';
 import { CommonModule } from '@angular/common';
+import { UserModule } from '../user/user.module';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 
 
@@ -10,7 +11,8 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
   imports: [
     RouterModule,
     CommonModule,
-    ClarityModule
+    ClarityModule,
+    UserModule
   ],
   exports: [
     HeaderBarComponent

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseModule } from './modules/base/base.module';
+import { AuthGuard } from './guards/auth.guard';
 import '@clr/icons';
 import '@clr/icons/shapes/essential-shapes';
 import '@clr/icons/shapes/social-shapes';
@@ -19,7 +20,7 @@ import '@clr/icons/shapes/social-shapes';
     AppRoutingModule,
     BaseModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

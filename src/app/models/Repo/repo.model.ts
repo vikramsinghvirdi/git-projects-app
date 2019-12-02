@@ -1,3 +1,6 @@
+/*
+* Repo model to define properties for repos of organization on GitHub
+*/
 export class Repo {
 
     id: any;

@@ -1,0 +1,22 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome" i18n>Welcome to</h3>
+            VMware GitHub Projects App
+            <h5 class="hint" i18n>Use your GitHub account to login or sign up for a new account</h5>
+        </section>
+        <div class="login-group">
+            <clr-alert *ngIf="error" [clrAlertType]="'danger'">
+                <clr-alert-item>
+                    <span class="alert-text" i18n>
+                        {{error}}
+                    </span>
+                </clr-alert-item>
+            </clr-alert>
+            <a *ngIf="!isLoading" (click)="authorizeUser()" class="signup btn" i18n>Sign In using GitHub</a>
+            <span *ngIf="isLoading" class="spinner spinner-md">
+                Loading...
+            </span>
+        </div>
+    </form>
+</div>

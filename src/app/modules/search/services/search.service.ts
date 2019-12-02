@@ -19,9 +19,11 @@ export class SearchService {
   */
   getOrgInfo(): Observable<any> {
 
+    let access_token = localStorage.getItem('access_token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'accept': 'application/vnd.github.baptiste-preview+json'
+      'accept': 'application/vnd.github.baptiste-preview+json',
+      'Authorization': 'token ' + access_token
     });
 
     return this.http.get(environment.orgDetail, { headers: headers }).pipe(
@@ -45,9 +47,11 @@ export class SearchService {
    */
   getListOfAllRepos(page: any): Observable<any> {
 
+    let access_token = localStorage.getItem('access_token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'accept': 'application/vnd.github.baptiste-preview+json'
+      'accept': 'application/vnd.github.baptiste-preview+json',
+      'Authorization': 'token ' + access_token
     });
 
     let queryString = Object.keys(page).map(key => key + '=' + page[key]).join('&');
@@ -103,8 +107,8 @@ export class SearchService {
         if (fieldType === 'string') {
           // Use toUpperCase() to ignore character casing
           // And fallback to '' incase there is no value present
-          itemA = itemA ? '' : itemA.toUpperCase();
-          itemB = itemA ? '' : itemB.toUpperCase();
+          itemA = itemA.length<0 ? '' : itemA.toUpperCase();
+          itemB = itemB.length<0 ? '' : itemB.toUpperCase();
         }
         else if (fieldType === 'date') {
           itemA = new Date(itemA);
@@ -142,7 +146,7 @@ export class SearchService {
     if (Error && error instanceof Error) {
       errMsg = error['error']; // || error.toString()
     } else {
-      errMsg = error.error ? error.error : error.toString();
+      error.message.toString();
     }
 
     try {

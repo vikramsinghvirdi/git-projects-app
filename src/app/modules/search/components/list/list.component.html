@@ -6,16 +6,16 @@
         <p class="p1" i18n>List of all Open Source Projects</p>
     </div>
     <div class="list-content">
-        <aside class="list-content__filters clr-hidden-sm-down">
-            <ng-container *ngTemplateOutlet="filtersTemplate"></ng-container>
+        <aside class="list-content__filters clr-hidden-sm-down" [ngClass]=" isSticky ? 'sticky-container': ''">
+            <ng-container *ngTemplateOutlet="filtersTemplate;context:{counter: 1}"></ng-container>
         </aside>
         <section class="list-content__results">
             <div class="list-content__results__summary">
                 <h4 i18n>Showing {{filteredRepos.length}} of {{page.total | shortNumber}} Projects</h4>
                 <app-search-bar class="list-content__results__search-bar" (onSearchChange)="handleSearch($event)">
                 </app-search-bar>
-                <button class="list-content__results__filter-button btn btn-outline clr-hidden-md-up"
-                    (click)="toggleFiltersPanel($event)">Filters<clr-icon class="filter-button__icon"
+                <button class="list-content__results__filter-button btn btn-link clr-hidden-md-up"
+                    (click)="toggleFiltersPanel($event)">Sort<clr-icon class="filter-button__icon"
                         [ngClass]=" showFiltersPanel ? '' : 'collapsed'" shape="angle"></clr-icon></button>
                 <div class="btn-group clr-hidden-sm-down">
                     <div class="radio btn btn-icon">
@@ -36,7 +36,7 @@
             </div>
             <div class="list-content__results__collapsible_filters clr-hidden-md-up"
                 [ngClass]="showFiltersPanel ? 'open' : ''">
-                <ng-container *ngTemplateOutlet="filtersTemplate"></ng-container>
+                <ng-container *ngTemplateOutlet="filtersTemplate;context:{counter: 2}"></ng-container>
             </div>
             <div class="separator"></div>
             <div class="data-list">
@@ -61,6 +61,8 @@
     </div>
 </main>
 
-<ng-template #filtersTemplate>
-    <app-filter (onSortByChange)="applySortBy($event)"></app-filter>
+<!--Passing counter to keep track of form instance. This won't create any performance issue as
+one of the form is always hidden and not rendered based on responsiveness behavior of the app-->
+<ng-template #filtersTemplate let-instanceCounter="counter">
+    <app-filter (onSortByChange)="applySortBy($event)" [instanceCounter]="instanceCounter"></app-filter>
 </ng-template>

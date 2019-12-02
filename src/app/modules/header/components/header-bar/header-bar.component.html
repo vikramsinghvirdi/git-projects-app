@@ -5,6 +5,19 @@
         </a>
     </div>
     <div class="header-nav">
-        <a class="nav-link nav-text active" i18n>Home</a>
+        <a [routerLink]="'/home'" class="nav-link nav-text active" i18n>Home</a>
+    </div>
+    <div class="header-actions" *ngIf="user">
+        <clr-dropdown>
+            <button class="nav-text user-options" clrDropdownTrigger aria-label="open user options" i18n>
+                <clr-icon shape="user"></clr-icon>
+                {{user?.name}}
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a [href]="user?.profile_url" target="_blank" clrDropdownItem i18n>Profile</a>
+                <a (click)="logout()" clrDropdownItem i18n>Log out</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
     </div>
 </header>

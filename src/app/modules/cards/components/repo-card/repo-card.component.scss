@@ -6,9 +6,16 @@
         height: 335px;
         .card-block{
             border-bottom: 0px;
+            flex: 1;
             .card-text{
+                flex: 1;
+                .card-text__more-info{
+                    bottom: 3.0rem;
+                    position: absolute;
+                }
                 .language{
                     margin-top: 1rem;
+                    align-self: start;
                 }
                 .status{
                     margin-top: 1rem;
@@ -27,5 +34,19 @@
         .card-footer{
             border-top: 1px solid #ededed;
         }
+    }
+}
+
+@media(max-width:576px) {
+    .card {
+        height: 280px !important;
+        .card-block{           
+            .card-text{                
+                .card-text__description{
+                    -webkit-line-clamp: 2 !important;
+                }
+            }
+        }
+        
     }
 }

@@ -28,7 +28,7 @@ const routes: Routes = [{
     CommonModule,
     ClarityModule,
     CardsModule,
-     InfiniteScrollModule,
+    InfiniteScrollModule,
     RouterModule.forChild(routes)
   ],
   exports: [],

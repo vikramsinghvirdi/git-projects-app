@@ -1,7 +1,7 @@
-import { Repo.Model } from './repo.model';
+import { Repo } from './repo.model';
 
-describe('Repo.Model', () => {
+describe('Repo', () => {
   it('should create an instance', () => {
-    expect(new Repo.Model()).toBeTruthy();
+    expect(new Repo()).toBeTruthy();
   });
 });

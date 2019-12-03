@@ -1,7 +1,7 @@
-import { Org.Model } from './org.model';
+import { Org } from './org.model';
 
-describe('Org.Model', () => {
+describe('Org', () => {
   it('should create an instance', () => {
-    expect(new Org.Model()).toBeTruthy();
+    expect(new Org()).toBeTruthy();
   });
 });

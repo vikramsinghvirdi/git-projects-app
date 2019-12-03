@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchBarComponent } from './search-bar.component';
+import { ClrIconModule } from '@clr/angular';
+import { ShortNumberPipe } from '../../../../pipes/shortnumber/shortnumber.pipe';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SearchBarComponent', () => {
   let component: SearchBarComponent;
@@ -8,7 +12,8 @@ describe('SearchBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchBarComponent ]
+      declarations: [ SearchBarComponent, ShortNumberPipe ],
+      imports: [ClrIconModule, HttpClientModule, HttpClientTestingModule]
     })
     .compileComponents();
   }));

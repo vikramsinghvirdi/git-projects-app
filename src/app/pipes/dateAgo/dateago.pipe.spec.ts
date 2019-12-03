@@ -1,7 +1,7 @@
-import { Dateago.Pipe } from './dateago.pipe';
+import { DateAgoPipe } from './dateago.pipe';
 
-describe('Dateago.Pipe', () => {
+describe('DateAgoPipe', () => {
   it('should create an instance', () => {
-    expect(new Dateago.Pipe()).toBeTruthy();
+    expect(new DateAgoPipe()).toBeTruthy();
   });
 });

@@ -1,7 +1,7 @@
-import { Truncate.Pipe } from './truncate.pipe';
+import { TruncatePipe } from './truncate.pipe';
 
-describe('Truncate.Pipe', () => {
+describe('TruncatePipe', () => {
   it('should create an instance', () => {
-    expect(new Truncate.Pipe()).toBeTruthy();
+    expect(new TruncatePipe()).toBeTruthy();
   });
 });

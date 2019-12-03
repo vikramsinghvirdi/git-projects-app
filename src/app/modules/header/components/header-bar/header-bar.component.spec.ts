@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderBarComponent } from './header-bar.component';
+import { RouterModule } from '@angular/router';
+import { ClrDropdownModule, ClrIconModule, ClrNavigationModule } from '@clr/angular';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from '../../../user/services/user.service';
 
 describe('HeaderBarComponent', () => {
   let component: HeaderBarComponent;
@@ -8,7 +12,9 @@ describe('HeaderBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderBarComponent ]
+      declarations: [ HeaderBarComponent ],
+      imports: [RouterModule, ClrDropdownModule, ClrIconModule, ClrNavigationModule, HttpClientModule],
+      providers: [UserService]
     })
     .compileComponents();
   }));

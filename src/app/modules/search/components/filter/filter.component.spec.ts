@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilterComponent } from './filter.component';
+import { ClrDropdownModule,  ClrRadioModule } from '@clr/angular';
 
 describe('FilterComponent', () => {
   let component: FilterComponent;
@@ -8,7 +9,8 @@ describe('FilterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilterComponent ]
+      declarations: [ FilterComponent ],
+      imports: [ClrRadioModule, ClrDropdownModule]
     })
     .compileComponents();
   }));

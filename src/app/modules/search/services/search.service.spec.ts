@@ -1,9 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
 import { SearchService } from './search.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SearchService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({
+    providers:[SearchService],
+    imports: [HttpClientModule, HttpClientTestingModule, RouterTestingModule.withRoutes([])]
+  }));
 
   it('should be created', () => {
     const service: SearchService = TestBed.get(SearchService);

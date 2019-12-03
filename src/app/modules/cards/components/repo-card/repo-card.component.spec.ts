@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RepoCardComponent } from './repo-card.component';
+import { DateAgoPipe } from '../../../../pipes/dateAgo/dateago.pipe';
+import { ClrIconModule } from '@clr/angular';
 
 describe('RepoCardComponent', () => {
   let component: RepoCardComponent;
@@ -8,7 +10,8 @@ describe('RepoCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepoCardComponent ]
+      declarations: [ RepoCardComponent, DateAgoPipe ],
+      imports: [ClrIconModule]
     })
     .compileComponents();
   }));

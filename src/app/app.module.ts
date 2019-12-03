@@ -9,6 +9,7 @@ import { AuthGuard } from './guards/auth.guard';
 import '@clr/icons';
 import '@clr/icons/shapes/essential-shapes';
 import '@clr/icons/shapes/social-shapes';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +19,8 @@ import '@clr/icons/shapes/social-shapes';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    BaseModule
+    BaseModule,
+    RouterModule.forRoot([])
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

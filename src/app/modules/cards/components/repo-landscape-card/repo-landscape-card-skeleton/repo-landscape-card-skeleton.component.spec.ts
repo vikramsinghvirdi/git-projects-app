@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RepoLandscapeCardSkeletonComponent } from './repo-landscape-card-skeleton.component';
+import { NgxContentLoadingModule } from 'ngx-content-loading';
 
 describe('RepoLandscapeCardSkeletonComponent', () => {
   let component: RepoLandscapeCardSkeletonComponent;
@@ -8,9 +9,10 @@ describe('RepoLandscapeCardSkeletonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepoLandscapeCardSkeletonComponent ]
+      declarations: [RepoLandscapeCardSkeletonComponent],
+      imports: [NgxContentLoadingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

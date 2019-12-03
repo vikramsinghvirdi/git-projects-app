@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClarityModule } from '@clr/angular';
+import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { NgxContentLoadingModule } from 'ngx-content-loading';
 import { TruncatePipe } from '../../pipes/truncate/truncate.pipe';
 import { DateAgoPipe } from '../../pipes/dateAgo/dateago.pipe';
@@ -20,6 +20,7 @@ import { RepoLandscapeCardSkeletonComponent } from './components/repo-landscape-
   imports: [
     CommonModule,
     ClarityModule,
+    ClrIconModule,
     NgxContentLoadingModule
   ],
   exports: [

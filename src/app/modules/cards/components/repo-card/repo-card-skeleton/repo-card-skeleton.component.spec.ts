@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RepoCardSkeletonComponent } from './repo-card-skeleton.component';
+import { NgxContentLoadingModule } from 'ngx-content-loading';
 
 describe('RepoCardSkeletonComponent', () => {
   let component: RepoCardSkeletonComponent;
@@ -8,7 +9,8 @@ describe('RepoCardSkeletonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepoCardSkeletonComponent ]
+      declarations: [ RepoCardSkeletonComponent],
+      imports: [NgxContentLoadingModule]
     })
     .compileComponents();
   }));
